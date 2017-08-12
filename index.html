@@ -1,32 +1,41 @@
 <html>
 
-    <script lang="javascript">
-        function convertEC(buying, rate1, rate2) {
-            return rate1.value * (buying.value / rate2.value) * 1000000;
-        }
-    </script>
+    <head>
 
-    <title>EC/KC to ED Converter</title>
+        <script lang="javascript">
+            function conversion(buying, rate1, rate2) {
+                return rate1.value * (buying.value / rate2.value) * 1000000;
+            }
+        </script>
 
-    <link href="main.css" rel="stylesheet" />
-    <h1><div align="center"> EC/KC to ED Converter</h1>
-    <h2>
-        <div align="center"> Enter EC/KC Rate. <br>
-        <input type="text" id="in1"> : <input type="text" value="100" id="in2">
-    </h2>
+        <title>K-Ching to ED Converter</title>
+        <link href="main.css" rel="stylesheet" />
 
-    <h3>
-        <div align="center"> Enter how much EC/KC you're buying. <br>
-        <input type="text" id="in3">
-    </h3>
+        <br>
+        </head>
 
-    <h4>
-        <div align="center">
-        <button type="button" id="calc" onclick="document.getElementById('out').value=convertEC(document.getElementById('in1'), document.getElementById('in3'), document.getElementById('in2')).toLocaleString();">Calculate</button>
-    </h4>
+    <body>
 
-    <h5>
-        <div align="center"> Result <br>
-        <input id="out" readonly="true" value="0">
-    </h5>
+        <h1><div align="center">K-Ching to ED Converter</h1>
+        <h2>
+            <div align="center"> Enter K-Ching Rate. <br>
+            <input type="text" id="in1"> : <input type="text" value="100" id="in2">
+        </h2>
+
+        <h3>
+            <div align="center"> Enter how much K-Ching you're buying/selling. <br>
+            <input type="text" id="in3">
+        </h3>
+
+        <h4>
+            <div align="center">
+            <button type="button" id="calc" onclick="document.getElementById('out').value=conversion(document.getElementById('in1'), document.getElementById('in3'), document.getElementById('in2')).toLocaleString();">Calculate</button>
+        </h4>
+
+        <h5>
+            <div align="center"> Result <br>
+            <input id="out" readonly="true" value="0">
+        </h5>
+
+    </body>
 </html>
